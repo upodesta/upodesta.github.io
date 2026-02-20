@@ -119,8 +119,6 @@ if (contactForm) {
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            service: document.getElementById('service').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         };
@@ -165,19 +163,13 @@ if (contactForm) {
 // Form validation function
 function validateForm(data) {
     // Check if all required fields are filled
-    if (!data.name || !data.email || !data.phone || !data.service || !data.subject || !data.message) {
+    if (!data.name || !data.email || !data.subject || !data.message) {
         return false;
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-        return false;
-    }
-
-    // Validate phone format (basic validation)
-    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-    if (!phoneRegex.test(data.phone)) {
         return false;
     }
 
